@@ -12,12 +12,12 @@ source_opts = node["monit"]["source"]
 monit_version = source_opts["version"]
 
 pam_pkg = value_for_platform_family(
-  %w[rhel fedora suse] => "pam-devel",
+  %w[rhel fedora suse amazon] => "pam-devel",
   "debian" => "libpam-dev"
 )
 
 ssl_pkg = value_for_platform_family(
-  %w[rhel fedora suse] => "openssl-devel",
+  %w[rhel fedora suse amazon] => "openssl-devel",
   "debian" => "libssl-dev"
 )
 

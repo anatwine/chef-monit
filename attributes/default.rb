@@ -63,7 +63,7 @@ default["monit"]["mail"] = {
 }
 
 case node["platform_family"]
-when "rhel", "fedora", "suse"
+when "rhel", "fedora", "suse", "amazon"
   default["monit"]["main_config_path"] = "/etc/monit.conf"
   default["monit"]["includes_dir"] = "/etc/monit.d"
 else

@@ -27,6 +27,6 @@ template "/etc/init.d/monit" do
 end
 
 execute "chkconfig monit on" do
-  only_if { platform_family?("rhel") }
+  only_if { platform_family?("rhel") || platform_family?("amazon") }
   not_if %(chkconfig --list | grep 'monit ' | grep '2:on')
 end
